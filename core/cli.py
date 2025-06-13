@@ -14,9 +14,9 @@ class Cli:
         args = self.parser.parse_args()
 
         if args.up:
-            await self.render.add_volume("+")
+            await self.render.add_brightness("+")
         elif args.down:
-            await self.render.add_volume("-")
+            await self.render.add_brightness("-")
         else:
             self.parser.print_help()
             sys.exit(1)

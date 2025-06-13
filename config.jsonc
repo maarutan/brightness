@@ -1,9 +1,9 @@
-// ┬  ┬┌─┐┬  ┬ ┬┌┬┐┌─┐  ┌─┐┌─┐┌┐┌┌─┐┬┌─┐
-// └┐┌┘│ ││  │ ││││├┤   │  │ ││││├┤ ││ ┬
-//  └┘ └─┘┴─┘└─┘┴ ┴└─┘  └─┘└─┘┘└┘└  ┴└─┘
+// ┌┐ ┬─┐┬┌─┐┬ ┬┌┬┐┌┐┌┌─┐┌─┐┌─┐  ┌─┐┌─┐┌┐┌┌┬┐┬─┐┌─┐┬
+// ├┴┐├┬┘││ ┬├─┤ │ │││├┤ └─┐└─┐  │  │ ││││ │ ├┬┘│ ││
+// └─┘┴└─┴└─┘┴ ┴ ┴ ┘└┘└─┘└─┘└─┘  └─┘└─┘┘└┘ ┴ ┴└─└─┘┴─┘
 //--------------------------------------------------------------------
 // Copyright (c) 2025 maarutan \ Marat Arzymatov. All Rights Reserved.
-// https://github.com/maarutan/volume
+// https://github.com/maarutan/brightness
 //
 {
   // ┬─┐┌─┐┌┐┌┌┬┐┌─┐┬─┐
@@ -11,10 +11,10 @@
   // ┴└─└─┘┘└┘─┴┘└─┘┴└─
 
   // Theme settings
-  "theme": "default",  // Add custom themes (default options: "default" | "sunshine")
+  "theme": "sunshine",  // Add custom themes (default options: "default" | "sunshine")
   
   // Brightness display settings
-  "redner_brightness": "  *･ﾟ✧ {volume}% ✧･ﾟ*",  // Customize volume output (use {volume} placeholder)
+  "redner_brightness": "  *･ﾟ✧ {brightness}% ✧･ﾟ*",  // Customize brightnesbrightnesss output (use {volume} placeholder)
   
   // ┌┐┌┌─┐┌┬┐┬┌─┐┬ ┬  ┌─┐┌─┐┌┐┌┌┬┐
   // ││││ │ │ │├┤ └┬┘  └─┐├┤ │││ ││

@@ -55,16 +55,15 @@ class IconPath(IconsTheme):
             else RELATIVE_CACHE_FILE_SYSTEM_THEME.read_text().strip()
         )
 
-    def get_volume_icon(self) -> Optional[Path]:
-        volume = self.brness.get_brightness()
+    def get_brightness_icon(self) -> Optional[Path]:
+        brightness = self.brness.get_brightness()
         int_keys = sorted([k for k in self.icons.keys()], reverse=True)
 
         for key in int_keys:
-            if volume >= key:
+            if brightness >= key:
                 result = self.path / self.icons[key]
                 if self.fm(Path(result)).is_exists():
                     return result
-                # ищем ближайший меньший
                 for alt_key in range(key - 1, 0, -1):
                     if alt_key in self.icons:
                         alt_result = self.path / self.icons[alt_key]

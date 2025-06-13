@@ -16,9 +16,9 @@ class Render:
         self.ip = IconPath()
 
         ntsend_icon = self.conf.get_option("notify_icon")
-        self.icons_vol = self.ip.get_volume_icon() if ntsend_icon else None
+        self.icons_vol = self.ip.get_brightness_icon() if ntsend_icon else None
 
-    async def add_volume(self, status: str):
+    async def add_brightness(self, status: str):
         status = "-" if status == "-" else ""
         delta = (
             -int(self.conf.get_option("turn_sub"))
@@ -34,7 +34,7 @@ class Render:
                     self.ntsend(
                         icon=self.icons_vol,
                         message=self.conf.get_option("redner_brightness").format(
-                            volume=self.bness.just_add(+1 if delta > 0 else -1)
+                            brightness=self.bness.just_add(+1 if delta > 0 else -1)
                         ),
                         timeout=int(self.conf.get_option("notify_timeout")),
                         id=int(self.conf.get_option("notify_id")),
@@ -45,15 +45,15 @@ class Render:
             )
             await st_instance.run()
         else:
-            new_volume = self.bness.just_add(delta)
+            set_new_brightness = self.bness.just_add(delta)
 
             self.ntsend(
                 icon=self.icons_vol,
                 message=self.conf.get_option("redner_brightness").format(
-                    volume=new_volume
+                    brightness=set_new_brightness
                 ),
                 timeout=int(self.conf.get_option("notify_timeout")),
                 id=int(self.conf.get_option("notify_id")),
                 progress=bool(self.conf.get_option("notify_progress_bar")),
-                progress_value=new_volume,
+                progress_value=set_new_brightness,
             ).send()
